@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <style>
+    .calendar { fill: none; stroke: #333; stroke-width: 2; }
+    .flower { fill: #FFB3BA; }
+    .leaf { fill: #BAFFC9; }
+    .heart { fill: #FF69B4; }
+  </style>
+  <defs>
+    <filter id="shadow">
+      <feDropShadow dx="2" dy="2" stdDeviation="1" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect class="calendar" x="50" y="50" width="300" height="200" rx="15" ry="15" filter="url(#shadow)" />
+  <line class="calendar" x1="50" y1="100" x2="350" y2="100" />
+  <line class="calendar" x1="125" y1="50" x2="125" y2="250" />
+  <line class="calendar" x1="200" y1="50" x2="200" y2="250" />
+  <line class="calendar" x1="275" y1="50" x2="275" y2="250" />
+  <text x="200" y="85" font-family="cursive" font-size="24" text-anchor="middle" fill="#333">Diciembre</text>
+  
+  <!-- Flores y hojas decorativas -->
+  <g transform="translate(40,40) scale(0.8)">
+    <path class="flower" d="M0,0 C5,-5 10,-5 15,0 C20,5 20,10 15,15 C10,20 5,20 0,15 C-5,10 -5,5 0,0 Z" />
+    <path class="leaf" d="M15,0 Q20,10 25,0 Q20,-10 15,0" />
+  </g>
+  <g transform="translate(360,40) scale(0.8) rotate(90)">
+    <path class="flower" d="M0,0 C5,-5 10,-5 15,0 C20,5 20,10 15,15 C10,20 5,20 0,15 C-5,10 -5,5 0,0 Z" />
+    <path class="leaf" d="M15,0 Q20,10 25,0 Q20,-10 15,0" />
+  </g>
+  <g transform="translate(40,260) scale(0.8) rotate(-90)">
+    <path class="flower" d="M0,0 C5,-5 10,-5 15,0 C20,5 20,10 15,15 C10,20 5,20 0,15 C-5,10 -5,5 0,0 Z" />
+    <path class="leaf" d="M15,0 Q20,10 25,0 Q20,-10 15,0" />
+  </g>
+  <g transform="translate(360,260) scale(0.8) rotate(180)">
+    <path class="flower" d="M0,0 C5,-5 10,-5 15,0 C20,5 20,10 15,15 C10,20 5,20 0,15 C-5,10 -5,5 0,0 Z" />
+    <path class="leaf" d="M15,0 Q20,10 25,0 Q20,-10 15,0" />
+  </g>
+  
+  <!-- Fecha destacada -->
+  <g transform="translate(200,180)">
+    <circle class="heart" cx="0" cy="0" r="40" />
+    <path d="M0,0 Q-20,-20 -40,0 T0,40 T40,0 T0,-40 Z" fill="#FFF" />
+    <text x="0" y="10" font-family="Arial" font-size="36" font-weight="bold" text-anchor="middle" fill="#FFF">15</text>
+  </g>
+  
+  <!-- Líneas decorativas -->
+  <path class="calendar" d="M50,30 Q200,0 350,30" />
+  <path class="calendar" d="M50,270 Q200,300 350,270" />
+</svg>
