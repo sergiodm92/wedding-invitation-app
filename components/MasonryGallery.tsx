@@ -6,15 +6,15 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const photos = [
-  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", width: 2070, height: 1380 },
-  { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80", width: 2069, height: 1379 },
-  { src: "https://images.unsplash.com/photo-1591604466107-ec97de577aff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80", width: 2071, height: 1381 },
-  { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80", width: 1974, height: 1316 },
-  { src: "https://images.unsplash.com/photo-1545232979-8bf68ee9b1af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", width: 2070, height: 1380 },
-  { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", width: 2070, height: 1380 },
-  { src: "https://images.unsplash.com/photo-1583939411023-14783179e581?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", width: 2070, height: 1380 },
-  { src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", width: 2070, height: 1380 },
-  { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80", width: 2070, height: 1380 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318876/WhatsApp_Image_2024-08-29_at_9.10.56_PM_2_t5xcj9.jpg", width: 2070, height: 1380 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728319321/WhatsApp_Image_2024-08-29_at_9.11.14_PM_ukosde.jpg", width: 2070, height: 1380 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318881/WhatsApp_Image_2024-08-29_at_9.10.57_PM_3_vw1vwb.jpg", width: 2069, height: 1379 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728319463/WhatsApp_Image_2024-08-29_at_9.11.15_PM_vf3lmu.jpg", width: 2070, height: 1380 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728320235/WhatsApp_Image_2024-09-03_at_11.03.26_PM_uqak2p.jpg", width: 2070, height: 1380 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728319235/WhatsApp_Image_2024-08-29_at_9.11.11_PM_x1ipkw.jpg", width: 2070, height: 1380 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318877/WhatsApp_Image_2024-08-29_at_9.10.57_PM_2_xxoffq.jpg", width: 2071, height: 1381 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318884/WhatsApp_Image_2024-08-29_at_9.10.56_PM_npdd47.jpg", width: 2070, height: 1380 },
+  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318876/WhatsApp_Image_2024-08-29_at_9.10.57_PM_tlir6u.jpg", width: 1974, height: 1316 },
 ];
 
 const MasonryGallery = () => {
@@ -78,7 +78,7 @@ const MasonryGallery = () => {
   return (
     <section className="py-24 px-4 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Nuestra Galería</h2>
+        <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Un Poco de Nosotros</h2>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
           {photos.map((photo, index) => (
             <div key={index} className="mb-4 break-inside-avoid">

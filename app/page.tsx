@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import LoginForm from '@/components/LoginForm';
+import { weddingConfig } from '@/config/wedding-config';
 
 export default function Home() {
   return (
@@ -37,8 +38,8 @@ export default function Home() {
               className="rounded-b-3xl md:rounded-r-3xl md:rounded-l-none"
             />
             <div className="absolute bottom-4 left-4 right-4 text-white text-center z-20">
-              <p className="text-2xl md:text-3xl font-script mb-2">Ana & Juan</p>
-              <p className="text-base md:text-lg">15 de Diciembre, 2024</p>
+              <p className="text-2xl md:text-3xl font-script mb-2">{weddingConfig.brideAndGroom}</p>
+              <p className="text-base md:text-lg">{weddingConfig.date}</p>
             </div>
           </div>
         </div>

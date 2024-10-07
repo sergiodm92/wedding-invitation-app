@@ -7,11 +7,11 @@ import Link from 'next/link';
 
 const GoogleCalendarButton = () => {
   const createGoogleCalendarLink = () => {
-    const { date, time, venue, address, brideAndGroom } = weddingConfig;
-    
+    const { date, time, venue, address, brideAndGroom, churchLocation } = weddingConfig;
+
     const [year, month, day] = date.split('-').map(Number);
     const [hours, minutes] = time.split(':').map(Number);
-    
+
     const startDate = new Date(year, month - 1, day, hours, minutes);
     const endDate = new Date(startDate.getTime() + 6 * 60 * 60 * 1000);
 
@@ -25,7 +25,7 @@ const GoogleCalendarButton = () => {
       text: `Boda de ${brideAndGroom}`,
       dates: `${startDate.toISOString().replace(/-|:|\.\d+/g, '')}/${endDate.toISOString().replace(/-|:|\.\d+/g, '')}`,
       details: `Te invitamos a celebrar nuestra boda. ¡No faltes!`,
-      location: `${venue}, ${address}`,
+      location: churchLocation,
     });
 
     return `https://www.google.com/calendar/render?${params.toString()}`;

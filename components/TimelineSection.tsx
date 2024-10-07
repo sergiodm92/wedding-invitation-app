@@ -1,12 +1,14 @@
 import React from 'react';
 import { Clock, Church, GlassWater, Music, Scroll } from 'lucide-react';
+import { weddingConfig } from '@/config/wedding-config';
+const { churchTime, civilTime } = weddingConfig;
 
 const timelineSteps = [
-  { icon: Scroll, title: 'Ceremonia Civil', time: '14:00', description: 'Unión legal de la pareja' },
-  { icon: Church, title: 'Ceremonia Religiosa', time: '16:00', description: 'Bendición de la unión en la iglesia' },
-  { icon: GlassWater, title: 'Recepción', time: '18:00', description: 'Bienvenida y cóctel de apertura' },
-  { icon: Music, title: 'Fiesta y Baile', time: '20:00', description: 'Celebración con música y baile' },
-  { icon: Clock, title: 'Fin del Evento', time: '02:00', description: 'Despedida de los novios' },
+  { icon: Church, title: 'Ceremonia Religiosa', time: churchTime, description: 'Iglesia los Paños' },
+  { icon: Scroll, title: 'Ceremonia Civil', time: civilTime, description: 'Finca las Marías' },
+  { icon: GlassWater, title: 'Recepción', time: '17:30', description: 'Finca las Marías' },
+  { icon: Music, title: 'Fiesta y Baile', time: '20:00', description: 'Finca las Marías' },
+  { icon: Clock, title: 'Fin del Evento', time: '04:00', description: 'Finca las Marías' },
 ];
 
 const TimelineSection = () => {
@@ -17,7 +19,7 @@ const TimelineSection = () => {
         <div className="relative">
           {/* Línea vertical (oculta en móviles) */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-300 dark:bg-pink-700 hidden md:block"></div>
-          
+
           {timelineSteps.map((step, index) => (
             <div key={index} className={`mb-8 md:mb-16 flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
               <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} mb-4 md:mb-0`}>

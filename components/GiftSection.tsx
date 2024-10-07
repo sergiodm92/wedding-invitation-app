@@ -6,11 +6,11 @@ import { Gift, CopyIcon, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
 import { motion, AnimatePresence } from 'framer-motion';
+import { weddingConfig } from '@/config/wedding-config';
 
 const GiftSection = () => {
   const [showDetails, setShowDetails] = useState(false);
-  const cbu = "0000000000000000000000";
-  const alias = "BODA.ANA.JUAN";
+  const {cbu, alias} = weddingConfig;
 
   const copyToClipboard = (text: string, type: string) => {
     navigator.clipboard.writeText(text).then(() => {

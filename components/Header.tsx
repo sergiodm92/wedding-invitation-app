@@ -11,7 +11,7 @@ const navItems = [
   { name: 'Cronología', href: '#timeline' },
   { name: 'Lugar', href: '#venue' },
   { name: 'Galería', href: '#gallery' },
-  { name: 'Detalles', href: '#partyInfo' },
+  { name: 'Ubicaciones', href: '#partyInfo' },
   { name: 'Regalos', href: '#gifts' },
 ];
 
@@ -83,7 +83,7 @@ export default function Header() {
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.3 }}
         >
-          <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
+          <nav className="container mx-auto px-3 md:px-16 py-4 flex justify-between items-center">
             <div className="flex items-center">
               <Button
                 variant="ghost"

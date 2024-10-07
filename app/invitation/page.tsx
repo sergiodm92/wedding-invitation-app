@@ -38,22 +38,19 @@ export default function Invitation() {
         <section id="hero">
           <HeroSection />
         </section>
-        <section id="nosotros">
-          <NosotrosSection />
-        </section>
         <section id="countdown">
           <CountdownSection />
+        </section>
+        <section id="nosotros">
+          <MasonryGallery />
         </section>
         <section id="timeline">
           <TimelineSection />
         </section>
         <GoogleCalendarSection />
-        <section id="venue">
+        {/* <section id="venue">
           <VenueImagesSection />
-        </section>
-        <section id="gallery">
-          <MasonryGallery />
-        </section>
+        </section> */}
         <section id="partyInfo">
           <PartyInfoSection />
         </section>
