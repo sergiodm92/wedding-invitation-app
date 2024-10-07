@@ -4,6 +4,7 @@ import React, { useState, useCallback } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Slider from 'react-slick';
 
 const photos = [
   { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318876/WhatsApp_Image_2024-08-29_at_9.10.56_PM_2_t5xcj9.jpg", width: 2070, height: 1380 },
@@ -75,11 +76,31 @@ const MasonryGallery = () => {
     };
   }, [currentIndex, handleKeyDown]);
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    swipe: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+        }
+      }
+    ]
+  };
+
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className=" py-24 px-4 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Un Poco de Nosotros</h2>
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
+        <div className="hidden md:block columns-1 sm:columns-2 lg:columns-3 gap-4">
           {photos.map((photo, index) => (
             <div key={index} className="mb-4 break-inside-avoid">
               <Image
@@ -92,6 +113,21 @@ const MasonryGallery = () => {
               />
             </div>
           ))}
+        </div>
+        <div className="relative w-full h-[600px] overflow-hidden rounded-lg shadow-2xl md:hidden">
+          <Slider {...settings}>
+            {photos.map((photo, index) => (
+              <div key={index} className="relative w-full h-[600px]">
+                <Image
+                  src={photo.src}
+                  alt={"photo"}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+            ))}
+          </Slider>
         </div>
       </div>
 

@@ -1,6 +1,6 @@
 export const weddingConfig = {
   brideAndGroom: `Tati & Martin`,
-  date: "2024-12-15",
+  date: "2024-12-21",
   time: "16:00",
   churchTime: "16:00",
   churchAddress: "Iglesia Los Paños, ruta 2",

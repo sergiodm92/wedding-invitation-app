@@ -11,7 +11,7 @@ const Footer = () => {
             <h3 className="text-3xl font-script text-pink-600 dark:text-pink-300 mb-4">
               {weddingConfig.brideAndGroom}
             </h3>
-            <p className="mb-2 text-lg">{new Date(weddingConfig.date).toLocaleDateString()}</p>
+            <p className="mb-2 text-lg">{new Date(weddingConfig.date).toLocaleDateString('es')}</p>
             <p className="text-lg">{weddingConfig.venue}</p>
           </div>
           <div className="text-center">
