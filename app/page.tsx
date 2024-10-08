@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import LoginForm from '@/components/LoginForm';
+import LoginForm from '@/components/login/LoginForm'
 import { weddingConfig } from '@/config/wedding-config';
 
 export default function Home() {

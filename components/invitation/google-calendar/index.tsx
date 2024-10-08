@@ -1,13 +1,13 @@
+"use client"
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import dynamic from 'next/dynamic';
 import { CalendarIcon } from 'lucide-react';
+import GoogleCalendarButton from './GoogleCalendarButton';
 
-const DynamicGoogleCalendarButton = dynamic(() => import('@/components/GoogleCalendarButton'), { ssr: false });
 
-export default function GoogleCalendarSection() {
+export function GoogleCalendarSection() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-white to-pink-100 dark:from-gray-800 dark:to-gray-900">
+    <section className="py-24 px-4 bg-bg2">
       <div className="max-w-5xl mx-auto">
         <Card className="overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300 bg-white dark:bg-gray-800">
           <CardContent className="p-0">
@@ -18,7 +18,7 @@ export default function GoogleCalendarSection() {
                   No te pierdas nuestro día especial. Agrega la fecha a tu calendario de Google con un solo clic.
                 </p>
                 <div className="flex justify-center md:justify-start">
-                  <DynamicGoogleCalendarButton />
+                  <GoogleCalendarButton />
                 </div>
               </div>
               <div className="md:w-1/2 relative h-64 md:h-auto">

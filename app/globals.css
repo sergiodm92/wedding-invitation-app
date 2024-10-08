@@ -26,8 +26,11 @@
     --input: 0 0% 89.8%;
     --ring: 346.8 77.2% 49.8%;
     --radius: 0.75rem;
+    --bg1: #f9fafb;
+    --bg2: #f3f4f6;
+    --footerColor: #d1d5db;
   }
-
+  /* #bf6e72 */
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -48,6 +51,10 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 346.8 77.2% 49.8%;
+    --bg1: #374151;
+    --bg2: #4b5563;
+    --footerColor: #374151;
+    ;
   }
 }
 

@@ -4,14 +4,14 @@ import { weddingConfig } from '@/config/wedding-config';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-pink-100 to-pink-200 dark:from-gray-800 dark:to-gray-900 text-gray-700 dark:text-gray-300">
+    <footer className="bg-gradient-to-b from-gray-300 to-red-100 dark:from-gray-800 dark:to-gray-900 text-gray-700 dark:text-gray-300">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="text-center md:text-left">
             <h3 className="text-3xl font-script text-pink-600 dark:text-pink-300 mb-4">
               {weddingConfig.brideAndGroom}
             </h3>
-            <p className="mb-2 text-lg">{new Date(weddingConfig.date).toLocaleDateString('es')}</p>
+            <p className="mb-2 text-lg">21/12/2024</p>
             <p className="text-lg">{weddingConfig.venue}</p>
           </div>
           <div className="text-center">

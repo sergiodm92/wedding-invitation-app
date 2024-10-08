@@ -20,6 +20,9 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
+        bg1: "var(--bg1)",
+        bg2: "var(--bg2)",
+        footerColor: "var(--footerColor)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {

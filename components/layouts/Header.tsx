@@ -9,8 +9,6 @@ const navItems = [
   { name: 'Inicio', href: '#hero' },
   { name: 'Nosotros', href: '#nosotros' },
   { name: 'Cronología', href: '#timeline' },
-  { name: 'Lugar', href: '#venue' },
-  { name: 'Galería', href: '#gallery' },
   { name: 'Ubicaciones', href: '#partyInfo' },
   { name: 'Regalos', href: '#gifts' },
 ];

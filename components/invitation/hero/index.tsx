@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { weddingConfig } from '@/config/wedding-config';
 
-export default function HeroSection() {
+export function HeroSection() {
   return (
     <section className="relative h-screen flex items-center justify-center text-center text-white">
       <div className="absolute inset-0 bg-black opacity-30"></div>

@@ -8,7 +8,7 @@ interface ImageSliderProps {
   images: string[];
 }
 
-const ImageSlider: React.FC<ImageSliderProps> = ({ images = [] }) => {
+export const ImageSlider: React.FC<ImageSliderProps> = ({ images = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -55,5 +55,3 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images = [] }) => {
     </div>
   );
 };
-
-export default ImageSlider;

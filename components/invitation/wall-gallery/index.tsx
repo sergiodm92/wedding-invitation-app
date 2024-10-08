@@ -5,20 +5,11 @@ import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Slider from 'react-slick';
+import { weddingConfig } from '@/config/wedding-config';
 
-const photos = [
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318876/WhatsApp_Image_2024-08-29_at_9.10.56_PM_2_t5xcj9.jpg", width: 2070, height: 1380 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728319321/WhatsApp_Image_2024-08-29_at_9.11.14_PM_ukosde.jpg", width: 2070, height: 1380 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318881/WhatsApp_Image_2024-08-29_at_9.10.57_PM_3_vw1vwb.jpg", width: 2069, height: 1379 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728319463/WhatsApp_Image_2024-08-29_at_9.11.15_PM_vf3lmu.jpg", width: 2070, height: 1380 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728320235/WhatsApp_Image_2024-09-03_at_11.03.26_PM_uqak2p.jpg", width: 2070, height: 1380 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728319235/WhatsApp_Image_2024-08-29_at_9.11.11_PM_x1ipkw.jpg", width: 2070, height: 1380 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318877/WhatsApp_Image_2024-08-29_at_9.10.57_PM_2_xxoffq.jpg", width: 2071, height: 1381 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318884/WhatsApp_Image_2024-08-29_at_9.10.56_PM_npdd47.jpg", width: 2070, height: 1380 },
-  { src: "https://res.cloudinary.com/dhx8hti8b/image/upload/v1728318876/WhatsApp_Image_2024-08-29_at_9.10.57_PM_tlir6u.jpg", width: 1974, height: 1316 },
-];
+const photos = weddingConfig.photosOurs;
 
-const MasonryGallery = () => {
+export const MasonryGallery = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
@@ -97,7 +88,7 @@ const MasonryGallery = () => {
   };
 
   return (
-    <section className=" py-24 px-4 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className=" py-24 px-4 bg-bg2">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Un Poco de Nosotros</h2>
         <div className="hidden md:block columns-1 sm:columns-2 lg:columns-3 gap-4">
@@ -132,11 +123,11 @@ const MasonryGallery = () => {
       </div>
 
       {currentIndex !== null && (
-        <div 
+        <div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           onClick={closeModal}
         >
-          <div 
+          <div
             className="relative bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl max-w-4xl max-h-[90vh] w-full overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
@@ -148,7 +139,7 @@ const MasonryGallery = () => {
             >
               <X size={24} />
             </Button>
-            <div 
+            <div
               className="relative w-full h-[calc(90vh-2rem)] flex items-center justify-center"
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
@@ -184,5 +175,3 @@ const MasonryGallery = () => {
     </section>
   );
 };
-
-export default MasonryGallery;

@@ -11,31 +11,31 @@ interface InfoItemProps {
 }
 
 const InfoItem: React.FC<InfoItemProps> = ({ icon: Icon, title, description, href }) => (
-  <a href={href} className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105">
+  <a href={href} className="flex flex-col items-center text-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 w-[300px]">
     <Icon className="w-12 h-12 text-pink-500 dark:text-pink-300 mb-4" />
     <h3 className="text-xl font-semibold mb-2 text-gray-800 dark:text-white">{title}</h3>
     <p className="text-gray-600 dark:text-gray-300">{description}</p>
   </a>
 );
 
-const PartyInfoSection: React.FC = () => {
+export const PartyLocations: React.FC = () => {
   const infoItems = [
+    {
+      icon: MapPinned,
+      title: "Iglesia",
+      description: `${weddingConfig.churchAddress}`,
+      href: `https://maps.app.goo.gl/Mof2njoQ2s2wwG6bA?g_st=iw`
+    },
     {
       icon: MapPinned,
       title: "Civil/Fiesta",
       description: `${weddingConfig.civilAdress}`,
       href: `https://maps.app.goo.gl/LGsBp78rZkLqEQVB6?g_st=iw`
     },
-    {
-      icon: MapPinned,
-      title: "Iglesia",
-      description: `${weddingConfig.churchAddress}`,
-      href: `https://maps.app.goo.gl/Mof2njoQ2s2wwG6bA?g_st=iw`
-    }
   ];
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="py-24 px-4 bg-bg1">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Ubicaciones</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:flex md:justify-center md:items-center cursor-pointer">
@@ -55,5 +55,3 @@ const PartyInfoSection: React.FC = () => {
     </section>
   );
 };
-
-export default PartyInfoSection;

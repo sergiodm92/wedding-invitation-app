@@ -8,7 +8,7 @@ import { toast } from 'sonner';
 import { motion, AnimatePresence } from 'framer-motion';
 import { weddingConfig } from '@/config/wedding-config';
 
-const GiftSection = () => {
+export const GiftSection = () => {
   const [showDetails, setShowDetails] = useState(false);
   const {cbu, alias} = weddingConfig;
 
@@ -23,7 +23,7 @@ const GiftSection = () => {
   };
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="py-24 px-4 bg-bg1">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-5xl font-script text-center mb-12 text-pink-600 dark:text-pink-300 text-shadow-sm">
           Regalo de Bodas
@@ -38,7 +38,6 @@ const GiftSection = () => {
             </div>
             <p className="text-center mb-8 text-gray-600 dark:text-gray-400">
               Si deseas contribuir a nuestro nuevo comienzo juntos, apreciamos cualquier aporte que quieras hacer.
-              Hemos creado un fondo para nuestra luna de miel y nuestro futuro hogar.
             </p>
             <div className="flex justify-center mb-6">
               <Button 
@@ -108,5 +107,3 @@ const GiftSection = () => {
     </section>
   );
 };
-
-export default GiftSection;
