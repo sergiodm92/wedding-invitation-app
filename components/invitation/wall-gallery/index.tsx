@@ -1,20 +1,30 @@
 "use client"
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Slider from 'react-slick';
 import { weddingConfig } from '@/config/wedding-config';
 import useIsMobile from '@/hooks/useIsMobile';
+import { motion, AnimatePresence, PanInfo } from 'framer-motion';
 
 const photos = weddingConfig.photosOurs;
 
 export const MasonryGallery = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
+  const constraintsRef = useRef(null);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const isMobile = useIsMobile();
+
+  const handleDragEnd = (event: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    if (info.offset.x > 100) {
+      goToPrevious();
+    } else if (info.offset.x < -100) {
+      goToNext();
+    }
+  };
 
   const openModal = useCallback((index: number) => {
     setCurrentIndex(index);
@@ -70,7 +80,7 @@ export const MasonryGallery = () => {
   }, [currentIndex, handleKeyDown]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -79,6 +89,7 @@ export const MasonryGallery = () => {
     autoplaySpeed: 3000,
     pauseOnHover: true,
     swipe: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
@@ -116,7 +127,7 @@ export const MasonryGallery = () => {
                   alt={"photo"}
                   layout="fill"
                   objectFit='cover'
-                  objectPosition={`${isMobile?photo.move:""} center`}
+                  objectPosition={`${isMobile ? photo.move : ""} center`}
                   className="rounded-lg"
                 />
               </div>
@@ -124,57 +135,48 @@ export const MasonryGallery = () => {
           </Slider>
         </div>
       </div>
-
-      {currentIndex !== null && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-          onClick={closeModal}
-        >
-          <div
-            className="relative bg-white dark:bg-gray-800 p-4 rounded-lg shadow-xl max-w-4xl max-h-[90vh] w-full overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {currentIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+            onClick={closeModal}
           >
-            <Button
-              variant="ghost"
-              size="icon"
-              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 z-10"
-              onClick={closeModal}
-            >
-              <X size={24} />
-            </Button>
-            <div
-              className="relative w-full h-[calc(90vh-2rem)] flex items-center justify-center"
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
+            <motion.div
+              ref={constraintsRef}
+              className="relative w-full h-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
             >
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                onClick={goToPrevious}
+                className="absolute top-4 right-4 text-white z-10"
+                onClick={closeModal}
               >
-                <ChevronLeft size={36} />
+                <X size={24} />
               </Button>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-                onClick={goToNext}
+              <motion.div
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={handleDragEnd}
+                className="w-full h-full flex items-center justify-center cursor-grab active:cursor-grabbing"
               >
-                <ChevronRight size={36} />
-              </Button>
-              <Image
-                src={photos[currentIndex].src}
-                alt={`Gallery image ${currentIndex + 1}`}
-                layout="fill"
-                objectFit="contain"
-                quality={100}
-              />
-            </div>
-          </div>
-        </div>
-      )}
+                <Image
+                  src={photos[currentIndex].src}
+                  alt={`Gallery image ${currentIndex + 1}`}
+                  layout="fill"
+                  objectFit="contain"
+                  quality={100}
+                  draggable={false}
+                />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
