@@ -29,7 +29,7 @@ export const ConfirmSection = () => {
       <div className="max-w-2xl mx-auto">
         <Card className="bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
           <CardContent className="p-8">
-            <h2 className="text-4xl font-script text-center mb-8 text-pink-600 dark:text-pink-300">Confirma tu Asistencia</h2>
+            <h2 className="text-4xl font-script text-center mb-8 text-textPrimary">Confirma tu Asistencia</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name" className="text-lg text-gray-700 dark:text-gray-300">Nombre</Label>

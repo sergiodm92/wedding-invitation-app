@@ -6,6 +6,7 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Slider from 'react-slick';
 import { weddingConfig } from '@/config/wedding-config';
+import useIsMobile from '@/hooks/useIsMobile';
 
 const photos = weddingConfig.photosOurs;
 
@@ -13,6 +14,7 @@ export const MasonryGallery = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const isMobile = useIsMobile();
 
   const openModal = useCallback((index: number) => {
     setCurrentIndex(index);
@@ -90,7 +92,7 @@ export const MasonryGallery = () => {
   return (
     <section className=" py-24 px-4 bg-bg2">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Un Poco de Nosotros</h2>
+        <h2 className="text-5xl font-script text-center mb-16 text-textPrimary text-shadow-sm">Un Poco de Nosotros</h2>
         <div className="hidden md:block columns-1 sm:columns-2 lg:columns-3 gap-4">
           {photos.map((photo, index) => (
             <div key={index} className="mb-4 break-inside-avoid">
@@ -113,7 +115,8 @@ export const MasonryGallery = () => {
                   src={photo.src}
                   alt={"photo"}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit='cover'
+                  objectPosition={`${isMobile?photo.move:""} center`}
                   className="rounded-lg"
                 />
               </div>

@@ -46,8 +46,8 @@ const CountdownTimer: React.FC<CountdownTimerProps> = ({ targetDate }) => {
   });
 
   const timerComponents = Object.entries(timeLeft).map(([interval, value]) => (
-    <div key={interval} className="flex flex-col items-center p-2 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-      <span className="text-2xl sm:text-4xl font-bold text-pink-500 dark:text-pink-300">{value.toString().padStart(2, '0')}</span>
+    <div key={interval} className="flex flex-col items-center p-2 sm:p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md w-24">
+      <span className="text-2xl sm:text-4xl font-bold text-textPrimary">{value.toString().padStart(2, '0')}</span>
       <span className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">{interval}</span>
     </div>
   ));

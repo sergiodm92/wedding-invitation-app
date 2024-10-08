@@ -98,7 +98,7 @@ export default function Header() {
                   <a
                     href={item.href}
                     onClick={(e) => scrollToSection(e, item.href)}
-                    className={`text-lg font-medium transition-colors duration-200 text-gray-800 dark:text-white hover:text-pink-500 dark:hover:text-pink-300 ${
+                    className={`text-lg font-medium transition-colors duration-200 text-gray-800 dark:text-white hover:text-pink-500 dark:hover:text-pink-500 ${
                       activeSection === item.href.slice(1)
                         ? 'text-pink-500 dark:text-pink-300 font-bold'
                         : ''

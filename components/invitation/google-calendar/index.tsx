@@ -13,7 +13,7 @@ export function GoogleCalendarSection() {
           <CardContent className="p-0">
             <div className="flex flex-col md:flex-row">
               <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                <h2 className="text-4xl font-script text-center md:text-left mb-6 text-pink-600 dark:text-pink-300">Agenda Nuestra Boda</h2>
+                <h2 className="text-4xl font-script text-center md:text-left mb-6 text-textPrimary">Agenda Nuestra Boda</h2>
                 <p className="text-center md:text-left mb-8 text-gray-600 dark:text-gray-300">
                   No te pierdas nuestro día especial. Agrega la fecha a tu calendario de Google con un solo clic.
                 </p>

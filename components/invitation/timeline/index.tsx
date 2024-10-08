@@ -15,13 +15,13 @@ export const TimelineSection = () => {
   return (
     <section className="py-24 px-4 bg-bg1">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Cronología del Evento</h2>
+        <h2 className="text-5xl font-script text-center mb-16 text-textPrimary text-shadow-sm">Cronología del Evento</h2>
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-300 dark:bg-pink-700"></div>
           {timelineSteps.map((step, index) => (
             <div key={index} className={`mb-12 md:mb-24 flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
               <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} mb-4 md:mb-0 relative`}>
-                <h3 className="text-2xl font-semibold text-pink-600 dark:text-pink-300 mb-2">{step.title}</h3>
+                <h3 className="text-2xl font-semibold text-textPrimary mb-2">{step.title}</h3>
                 <p className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-1">{step.time}</p>
                 <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
               </div>

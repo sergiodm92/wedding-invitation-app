@@ -25,7 +25,7 @@ export function DressCode() {
                                 <GiAmpleDress className="absolute bottom-4 right-4 w-12 h-12 text-white opacity-75" />
                             </div>
                             <div className="md:w-1/2 p-8 flex flex-col justify-center">
-                                <h2 className="text-4xl font-script text-center md:text-left mb-6 text-pink-600 dark:text-pink-300">Dress Code</h2>
+                                <h2 className="text-4xl font-script text-center md:text-left mb-6 text-textPrimary">Dress Code</h2>
                                 <p className="text-center md:text-left mb-8 text-gray-600 dark:text-gray-300">
                                     El tipo de vestimenta será Cocktail
                                 </p>

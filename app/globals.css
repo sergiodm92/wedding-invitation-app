@@ -29,6 +29,7 @@
     --bg1: #f9fafb;
     --bg2: #f3f4f6;
     --footerColor: #d1d5db;
+    --textPrimary: #ffff
   }
   /* #bf6e72 */
   .dark {
@@ -54,6 +55,7 @@
     --bg1: #374151;
     --bg2: #4b5563;
     --footerColor: #374151;
+    --textPrimary: #ffff
     ;
   }
 }

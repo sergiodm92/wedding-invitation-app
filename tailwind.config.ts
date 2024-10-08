@@ -25,6 +25,7 @@ const config: Config = {
         footerColor: "var(--footerColor)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        textPrimary: "var(--text-primary)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

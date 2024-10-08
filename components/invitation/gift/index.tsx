@@ -25,13 +25,13 @@ export const GiftSection = () => {
   return (
     <section className="py-24 px-4 bg-bg1">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-5xl font-script text-center mb-12 text-pink-600 dark:text-pink-300 text-shadow-sm">
+        <h2 className="text-5xl font-script text-center mb-12 text-textPrimary text-shadow-sm">
           Regalo de Bodas
         </h2>
         <Card className="overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300 bg-white dark:bg-gray-800">
           <CardContent className="p-8">
             <div className="flex flex-col items-center mb-8">
-              <Gift className="w-20 h-20 text-pink-500 dark:text-pink-300 mb-4" />
+              <Gift className="w-20 h-20 text-textPrimary mb-4" />
               <p className="text-xl text-center text-gray-700 dark:text-gray-300 italic">
                 &ldquo;Tu presencia es nuestro mejor regalo, pero si insistes...&rdquo;
               </p>
