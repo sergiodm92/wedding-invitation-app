@@ -17,7 +17,7 @@ export const TimelineSection = () => {
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Cronología del Evento</h2>
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-300 dark:bg-pink-700"></div>
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-pink-300 dark:bg-pink-700"></div>
           {timelineSteps.map((step, index) => (
             <div key={index} className={`mb-12 md:mb-24 flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
               <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'} mb-4 md:mb-0 relative`}>
@@ -26,9 +26,10 @@ export const TimelineSection = () => {
                 <p className="text-gray-600 dark:text-gray-400">{step.description}</p>
               </div>
               <div className="flex md:justify-center items-center md:absolute md:left-1/2 md:transform md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-auto">
-                <div className="w-16 h-16 bg-pink-500 dark:bg-pink-700 rounded-full flex items-center justify-center shadow-lg z-10">
+                <div className="w-16 h-16 bg-pink-500 dark:bg-pink-700 rounded-full flex items-center justify-center shadow-lg mr-4 md:mr-0">
                   <step.icon className="w-8 h-8 text-white" />
                 </div>
+                <div className="flex-grow border-t-2 border-pink-300 dark:border-pink-700 md:hidden"></div>
               </div>
             </div>
           ))}
@@ -37,3 +38,11 @@ export const TimelineSection = () => {
     </section>
   );
 };
+
+
+
+
+
+
+
+

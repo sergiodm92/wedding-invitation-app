@@ -38,7 +38,7 @@ export const PartyLocations: React.FC = () => {
     <section className="py-24 px-4 bg-bg1">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-5xl font-script text-center mb-16 text-pink-600 dark:text-pink-300 text-shadow-sm">Ubicaciones</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:flex md:justify-center md:items-center cursor-pointer">
+        <div className="flex flex-wrap items-center gap-8 md:flex justify-center md:items-center cursor-pointer">
           {infoItems.map((item, index) => (
             <InfoItem key={index} icon={item.icon} title={item.title} description={item.description} href={item.href} />
           ))}
