@@ -6,7 +6,7 @@ import { weddingConfig } from '@/config/wedding-config';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-purple-200 to-indigo-300 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-950">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-purple-200 to-indigo-300 dark:from-gray-900 dark:to-gray-800">
       <div className="w-full max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
         <div className="relative z-10 flex flex-col md:flex-row bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden">
           <div className="w-full md:w-1/2 p-6 md:p-12">
