@@ -26,7 +26,7 @@ export default function Invitation() {
   }, []);
 
   if (!isClient) {
-    return null; // or a loading spinner
+    return null; 
   }
 
   return (

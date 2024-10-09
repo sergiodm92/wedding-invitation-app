@@ -16,12 +16,48 @@ export const ConfirmSection = () => {
   const [song, setSong] = useState('');
   const [message, setMessage] = useState('');
   const [alergic, setAlergic] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar los datos del formulario
-    console.log({ name, guests, vegetarianMenu, song, message, alergic });
-    // Resetear el formulario o mostrar un mensaje de confirmación
+
+    // Construir los datos del formulario
+    const confirmData = {
+      name,
+      guests: parseInt(guests),  // Asegurar que es un número
+      vegetarianMenu: vegetarianMenu === 'si',  // Convertir a booleano
+      song,
+      message,
+      alergic,
+    };
+
+    try {
+      const response = await fetch('/api/confirm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ confirmData }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccessMessage("¡Confirmación enviada con éxito!");
+        // Limpiar el formulario
+        setName('');
+        setGuests('');
+        setVegetarianMenu('');
+        setSong('');
+        setMessage('');
+        setAlergic('');
+      } else {
+        setErrorMessage(data.message || "Ocurrió un error.");
+      }
+    } catch (error) {
+      setErrorMessage("Error de conexión. Inténtalo de nuevo más tarde.");
+    }
   };
 
   return (
@@ -31,6 +67,9 @@ export const ConfirmSection = () => {
           <CardContent className="p-8">
             <h2 className="text-4xl font-script text-center mb-8 text-textPrimary">Confirma tu Asistencia</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+              {successMessage && <p className="text-green-500">{successMessage}</p>}
+
               <div>
                 <Label htmlFor="name" className="text-lg text-gray-700 dark:text-gray-300">Nombre</Label>
                 <Input
@@ -70,12 +109,12 @@ export const ConfirmSection = () => {
                 </RadioGroup>
               </div>
               <div>
-                <Label htmlFor="song" className="text-lg text-gray-700 dark:text-gray-300">¿Es alergico a alguna comida? (opcional)</Label>
+                <Label htmlFor="alergic" className="text-lg text-gray-700 dark:text-gray-300">¿Es alérgico a alguna comida? (opcional)</Label>
                 <Input
-                  id="song"
-                  placeholder="Nombre de la canción"
+                  id="alergic"
+                  placeholder="Alérgenos"
                   className="mt-1 bg-pink-50 dark:bg-gray-700 border-pink-200 dark:border-pink-800"
-                  value={song}
+                  value={alergic}
                   onChange={(e) => setAlergic(e.target.value)}
                 />
               </div>

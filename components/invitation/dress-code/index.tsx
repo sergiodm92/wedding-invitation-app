@@ -27,7 +27,7 @@ export function DressCode() {
                             <div className="md:w-1/2 p-8 flex flex-col justify-center">
                                 <h2 className="text-4xl font-script text-center md:text-left mb-6 text-textPrimary">Dress Code</h2>
                                 <p className="text-center md:text-left mb-8 text-gray-600 dark:text-gray-300">
-                                    El tipo de vestimenta será Cocktail
+                                    El tipo de vestimenta será Formal
                                 </p>
                                 <div className="flex justify-center md:justify-start">
 

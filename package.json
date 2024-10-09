@@ -52,6 +52,7 @@
     "framer-motion": "^10.18.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.446.0",
+    "mongoose": "^8.7.0",
     "next": "13.5.1",
     "next-themes": "^0.3.0",
     "postcss": "8.4.30",
@@ -72,6 +73,7 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.2.2",
     "vaul": "^0.9.9",
+    "yup": "^1.4.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
