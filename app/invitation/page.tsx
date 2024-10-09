@@ -59,11 +59,10 @@ export default function Invitation() {
           <section id="gifts">
             <GiftSection />
           </section>
-          {isLoggedIn && (
             <section id="rsvp">
               <ConfirmSection />
             </section>
-          )}
+          
         </main>
       </MainLayout>
     </div>
