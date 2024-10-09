@@ -4,8 +4,6 @@ const ConfirmSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    unique: true,
-    match: /.+\@.+\..+/,
   },
   guests: {
     type: Number,
@@ -24,11 +22,7 @@ const ConfirmSchema = new mongoose.Schema({
   alergic: {
     type: String,
   },
-  ipAddress: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
+   createdAt: {
     type: Date,
     default: Date.now,
   },
