@@ -59,7 +59,7 @@ export default function Invitation() {
           <section id="gifts">
             <GiftSection />
           </section>
-            <section id="rsvp">
+            <section id="confirm">
               <ConfirmSection />
             </section>
           
